@@ -7,8 +7,7 @@ data class VialidadesA(
 )
 
 data class Seccion(
-    val secc: String,
-    val carril: String
+    val secc: String
 )
 {companion object{
     val vialidades = listOf(
@@ -16,20 +15,20 @@ data class Seccion(
             3,
             "3-Vía Morelos",
             listOf(
-                Seccion("759-1", "LD"),
-                Seccion("759-2", "LD"),
-                Seccion("759-3", "LI"),
-                Seccion("759-4", "LI")
+                Seccion("759-1"),
+                Seccion("759-2"),
+                Seccion("759-3"),
+                Seccion("759-4")
             )
         ),
         VialidadesA(
             5,
             "5-Boulevard Cuauhtémoc",
             listOf(
-                Seccion("6003-1", "LD"),
-                Seccion("6003-2", "LI"),
-                Seccion("6003-3", "LD"),
-                Seccion("6003-4", "LI")
+                Seccion("6003-1"),
+                Seccion("6003-2"),
+                Seccion("6003-3"),
+                Seccion("6003-4")
 
             )
         ),
@@ -37,8 +36,8 @@ data class Seccion(
             7,
             "7-Vía José López Portillo",
             listOf(
-                Seccion("300-1", "LD"),
-                Seccion("300-2", "LI")
+                Seccion("300-1"),
+                Seccion("300-2")
             )
         ),
 
@@ -46,13 +45,53 @@ data class Seccion(
             8,
             "8-Vialidad Mexiquense",
             listOf(
-                Seccion("V. Mexiquense-1", "LD"),
-                Seccion("V. Mexiquense-2", "LD"),
-                Seccion("V. Mexiquense-3", "LI"),
-                Seccion("V. Mexiquense-4", "LI")
+                Seccion("V. Mexiquense-1"),
+                Seccion("V. Mexiquense-2"),
+                Seccion("V. Mexiquense-3"),
+                Seccion("V. Mexiquense-4")
+            )
+        ),
+
+        VialidadesA(
+            9,
+            "9-Paseo Adolfo López Mateos",
+            listOf(
+                Seccion("297-1"),
+                Seccion("297-2")
+            )
+        ),
+
+        VialidadesA(
+            10,
+            "10-Periférico Oriente",
+            listOf(
+                Seccion("Periférico Oriente-1"),
+                Seccion("Periférico Oriente-2")
+            )
+        ),
+
+        VialidadesA(
+            11,
+            "11-Vía Gustavo Baz",
+            listOf(
+                Seccion("761-1"),
+                Seccion("761-2"),
+                Seccion("761-3"),
+                Seccion("761-4")
+            )
+        ),
+
+        VialidadesA(
+            12,
+            "12-Paseo Tollocan Centrales",
+            listOf(
+                Seccion("3015-1"),
+                Seccion("3015-2"),
+                Seccion("3015-3"),
+                Seccion("3015-4"),
+                Seccion("3015-5")
             )
         )
-
     )
 
 } }
