@@ -91,7 +91,36 @@ data class Seccion(
                 Seccion("3015-4"),
                 Seccion("3015-5")
             )
+        ),
+
+        VialidadesA(
+            14,
+            "14-Avenida Central",
+            listOf(
+                Seccion("799-1"),
+                Seccion("799-2"),
+                Seccion("799-3"),
+                Seccion("799-4")
+            )
+        ),
+
+        VialidadesA(
+            16,
+            "16-Santa Elena-Tultepec-coacalco De Berriozabal",
+            listOf(
+                Seccion("782-1"),
+                Seccion("782-2")
+            )
+        ),
+
+        VialidadesA(
+            18,
+            "18-Autopista México Puebla a Chalco el Cedral",
+            listOf(
+                Seccion("Méx. Puebla-1")
+            )
         )
+
     )
 
 } }
