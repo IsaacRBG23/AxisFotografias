@@ -27,6 +27,7 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -241,6 +242,13 @@ fun CreacionMinuta(
                                 it.fechaReg,
                                 it.inspectorSel
                             )
+
+                            Button(onClick = {
+
+                            }) {
+                                Icon(imageVector = Icons.Default.MoreVert, contentDescription = null)
+                            }
+
 
                             Button(
                                 onClick = { sharedViewModel.deteleMinuta(minutaB) },

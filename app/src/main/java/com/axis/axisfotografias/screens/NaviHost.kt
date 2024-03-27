@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.axis.axisfotografias.viewModel.SharedViewModel
 import com.axis.axisfotografias.Destinos.*
+import com.axis.axisfotografias.flotingmenu.opcionesMinuta
 import com.axis.axisfotografias.screens.Login
 
 @Composable
