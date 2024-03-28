@@ -1,6 +1,7 @@
 package com.axis.axisfotografias.screens
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.widget.Toast
 import com.axis.axisfotografias.desactivarBotonBack
 import androidx.compose.foundation.Image
@@ -82,6 +83,7 @@ fun CreacionMinuta(
     CerrarSesion: () -> Unit,
     MinutasVialidades: MinutasVialidades = viewModel(),
     desactivarBotonBack: desactivarBotonBack = viewModel(),
+    navNewMinuata: () -> Unit
 
 
     ) {
@@ -99,7 +101,7 @@ fun CreacionMinuta(
     val state = sharedViewModel.state
     val context = LocalContext.current
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-    //val scope = rememberCoroutineScope()
+    var  opcionesMinutaM by remember { mutableStateOf(false) }
     val inspectorValue = sharedViewModel.selectedInspector.value
     var showDialog by remember { mutableStateOf(false) }
     var expanded by remember { mutableStateOf(false) }
@@ -215,6 +217,7 @@ fun CreacionMinuta(
 
 
 //Mis items o minutas que se iran agregando en mi lazzy comlumn
+            var seleccionMinutaActual: Minuta? = null
 
             Column(modifier = Modifier.fillMaxWidth()) {
                 //Lista donde se encuentran almacenadas las minutas
@@ -244,6 +247,14 @@ fun CreacionMinuta(
                             )
 
                             Button(onClick = {
+                                opcionesMinutaM = true
+                                seleccionMinutaActual = Minuta(
+                                    it.minuta,
+                                    it.asignadoA,
+                                    it.codVialidad,
+                                    it.fechaReg,
+                                    it.inspectorSel
+                                )
 
                             }) {
                                 Icon(imageVector = Icons.Default.MoreVert, contentDescription = null)
@@ -304,13 +315,60 @@ fun CreacionMinuta(
 
             }
 
+            if (opcionesMinutaM){
+                val minutaActual = seleccionMinutaActual
+                Dialog(onDismissRequest = {opcionesMinutaM = false}) {
+                    Card(modifier = Modifier
+                        .width(300.dp)
+                        .height(350.dp))
+                    {
+
+                        Box(modifier = Modifier
+                            .fillMaxWidth()
+                            .height(75.dp)
+                            .background(Color(255, 140, 0))){
+
+                            Text(text = "OPCIONES",
+                                color = Color.White,
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center,
+                                modifier = Modifier.align(Alignment.Center)
+                            )
+
+                        }
+                        Column( // Usa Column para mejor distribuir el contenido
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .background(Color.White),
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally
+
+                        ) {
+                            Button(onClick = { /*TODO*/ }) {
+                                Icon(imageVector = Icons.Default.Add, contentDescription = null )
+                            }
+
+                            Button(onClick = { opcionesMinutaM = false }) {
+                                        Icon(imageVector = Icons.Default.Delete, contentDescription = null)
+                            }
+
+                            Button(onClick = { navNewMinuata() }) {
+
+                            }
+
+                        }
+                    }
+
+                }
+            }
 
 
 
 
 
             /*
-            Todo lo que va dentro del modla navigation va por debajo del mismo
+            Todo lo que va dentro del modal navigation va por debajo del mismo
              */
 
 

@@ -13,7 +13,7 @@ import com.axis.axisfotografias.data.BachesRepository
 import com.axis.axisfotografias.data.MinutasRepository
 import com.axis.axisfotografias.data.database.BachesDB
 import com.axis.axisfotografias.data.database.MinutasDB
-import com.axis.axisfotografias.screens.NaviHost
+import com.axis.axisfotografias.navegacion.NaviHost
 import com.axis.axisfotografias.viewModel.SharedViewModel
 import com.axis.axisfotografias.viewModel.SharedViewModelFactory
 import com.axis.bacheo_fotografias_inspeccion.ui.theme.Bacheo_Fotografias_InspeccionTheme

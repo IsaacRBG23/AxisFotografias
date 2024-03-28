@@ -1,4 +1,4 @@
-package com.axis.axisfotografias.screens
+package com.axis.axisfotografias.navegacion
 
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -6,8 +6,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.axis.axisfotografias.viewModel.SharedViewModel
-import com.axis.axisfotografias.Destinos.*
-import com.axis.axisfotografias.flotingmenu.opcionesMinuta
+import com.axis.axisfotografias.navegacion.Destinos.*
+import com.axis.axisfotografias.screens.CreacionMinuta
+import com.axis.axisfotografias.screens.ListMinutasNew
 import com.axis.axisfotografias.screens.Login
 
 @Composable
@@ -37,11 +38,17 @@ fun NaviHost(sharedViewModel: SharedViewModel) {
                     navController.navigate(InicioCBI.route)
 
                 },
-               MinutasVialidades = viewModel()
+               MinutasVialidades = viewModel(),
+                navNewMinuata = {
+                    navController.navigate(NuevoBache.route)
+                }
             )
         }
         composable(NuevoBache.route) {
-
+            ListMinutasNew(
+                sharedViewModel = sharedViewModel
+            )
         }
+
     }
 }
